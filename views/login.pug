@@ -1,0 +1,16 @@
+extends layout
+
+block content 
+  html
+    head
+      title Timesheet
+      link(rel='stylesheet', type='text/css', href='/css/login.css')
+    body
+      .loginbox
+        h1 Timesheet Login
+        form(method='POST', action='/users/login')
+          p  Username 
+            input(type='text', name='username', placeholder='Enter your Username')
+          p  Password 
+            input(type='password', name='password', placeholder='Enter password')
+            input(type='submit', name='', value='Login')

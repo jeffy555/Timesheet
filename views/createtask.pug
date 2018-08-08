@@ -1,0 +1,82 @@
+extends layout
+
+block content 
+  doctype html
+  html(lang="en")
+    head
+      title Bootstrap Example
+      |   
+      meta(charset="utf-8")
+      |   
+      meta(name="viewport", content="width=device-width, initial-scale=1")
+      |   
+      link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+      |   
+      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+      |   
+      script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    body
+      .container
+        h2 Create Task
+        |   
+        form.form-horizontal(action="/action_page.php")
+          .form-group
+            label.control-label.col-sm-2(for="") Team:
+            |       
+            .col-sm-10
+              select
+               option(value="") SBU
+               |   
+               option(value="") DBU
+               |   
+               option(value="") IBU
+               
+          |
+          .form-group
+            label.control-label.col-sm-2(for="") Product:
+            |       
+            .col-sm-10
+              select
+               option(value="") LIS
+               |   
+               option(value="") IOT
+               
+          |
+          .form-group
+            label.control-label.col-sm-2(for="") DEPARTMENT:
+            |       
+            .col-sm-10
+              select#mySelect(onchange="myFunction()")
+                option(value="Audi")
+                  | Audi
+                option(value="BMW")
+                  | BMW
+                option(value="Mercedes")
+                  | Mercedes
+                option(value="Volvo")
+                  | Volvo
+              
+              p#demo
+              script.
+                function myFunction() {
+                var x = document.getElementById("mySelect").value;
+                document.getElementById("demo").innerHTML =  "You selected" +x
+                }
+              #demo
+              if data == 'Volvo'
+                
+                .form-group
+                  label.control-label.col-sm-2(for="pwd") Password:
+                  |       
+                  .col-sm-10
+                    input#pwd.form-control(type="password", placeholder="Enter password", name="pwd")
+                        |     
+                .form-group
+                  .col-sm-offset-2.col-sm-10
+                    .checkbox
+                      label
+                          input(type="checkbox", name="remember")
+                          |  Remember me
+                .form-group
+                  .col-sm-offset-2.col-sm-10
+                    button.btn.btn-default(type="submit") Submit

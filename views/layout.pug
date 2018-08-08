@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title nodejs
+    link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet' href='/css/style.css')
+  
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/styles.css')
+    script(src='http://code.jquery.com/jquery-latest.min.js', type='text/javascript')
+    script(src='/bower_components/jquery/script.js')
+    title CSS MenuMaker
+  body
+    #cssmenu
+      ul
+        li.active
+          .topnav-right
+        if user
+          li
+            a(href='/') Home
+          li
+            a(href='/article/add') Add Timesheet
+          li
+            a(href='/task/add') Create Task
+          li
+            a(href='#') Contact
+            .topnav-right
+        if user
+          li
+            a(href='/users/Logout') Logout
+        else
+            li 
+              a(href='/users/register') Register
+            li  
+              a(href='/users/login') Login
+      
+    .container
+      != messages('message', locals)
+      if errors
+        each error, i in errors
+          div(class='alert alert-danger') #{error.msg}
+      block content
+    script(src="/bower_components/bootstrap/jquery/dist/jquery.js")
+    script(src="/bower_components/bootstrap/dist/js/bootstrap.js")
+    script(src="/js/main.js")

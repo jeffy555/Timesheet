@@ -1,0 +1,9 @@
+Nodejs:
+
+Steps:
+Install
+Require
+Configure
+Use
+
+app.use (to install middleware to host static files) 
